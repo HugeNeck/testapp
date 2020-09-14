@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MenuItem(){
+function MenuItem(props){
 
     const styles = {
         fontsize:30,
@@ -11,16 +11,9 @@ function MenuItem(){
     return(
 
 
-        <div className = "MenuItem" >       
+        <div className = "MenuItem" >  
             
-            <input type="button" value="Placeholder text" style={styles}></input>
-
-
-            {/* <input type="button" value="Replace Biggest Fish"></input>
-
-            <input type="button" value="See all Fish In Well"></input>
-
-            <input type="button" value="See all Fishers"></input> */}
+        <input type="button" value={props.value} style={styles}></input>
      
         </div>
     )
