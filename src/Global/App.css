@@ -33,3 +33,7 @@ td{
   text-align: left;
   font-size: calc(5px + 1vmin);
 }
+
+text{
+  font-size: calc(5px + 1vmin);
+}
