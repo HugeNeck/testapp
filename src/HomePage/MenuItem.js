@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 function MenuItem(props){
 
     const styles = {
@@ -9,7 +10,6 @@ function MenuItem(props){
 
 
     return(
-
 
         <div className = "MenuItem" >  
             

@@ -1,9 +1,9 @@
-import React from 'react'
 import LiveWellData from './LiveWellData'
 import LiveWellDataItem from './LiveWellDataItem'
+import React, {Component} from 'react'
 
-function LiveWell(){
-
+export default class LiveWell extends Component{
+    render(){
     const styles = {
     width : "100%"
     }
@@ -27,7 +27,5 @@ function LiveWell(){
         {fishArray}
         </table>
         )   
- }
-
-
-export default LiveWell
+    }
+}
