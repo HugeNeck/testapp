@@ -3,6 +3,12 @@ import LiveWellDataItem from './LiveWellDataItem'
 import React, {Component} from 'react'
 
 export default class LiveWell extends Component{
+
+    constructor(){
+        super()
+        this.state = {}
+    }
+
     render(){
     const styles = {
     width : "100%"

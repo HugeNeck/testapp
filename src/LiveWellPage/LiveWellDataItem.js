@@ -1,7 +1,6 @@
 import React from 'react'
 
 function LiveWellDataItem(props){
-    console.log(props)
     return(props.catchesArray.map(function(item){
         return(
             <tr>  
