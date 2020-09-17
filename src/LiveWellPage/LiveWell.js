@@ -1,15 +1,9 @@
 import LiveWellData from './LiveWellData'
 import LiveWellDataItem from './LiveWellDataItem'
-import React, {Component} from 'react'
+import React from 'react'
 
-export default class LiveWell extends Component{
+export default function LiveWell(){
 
-    constructor(){
-        super()
-        this.state = {}
-    }
-
-    render(){
     const styles = {
     width : "100%"
     }
@@ -34,4 +28,3 @@ export default class LiveWell extends Component{
         </table>
         )   
     }
-}

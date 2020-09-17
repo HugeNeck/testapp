@@ -2,6 +2,14 @@ import React, {Component} from 'react'
 import LiveWellData from '../LiveWellPage/LiveWellData'
 
 export default class Replace extends Component{
+
+    constructor(){
+        super();
+        this.state = {
+            fishData : LiveWellData
+        }
+    }
+    
     render(){
 
         // const fishRadioData = []
@@ -22,7 +30,7 @@ export default class Replace extends Component{
                             </span>
                         )} */}
 
-                        {LiveWellData.map(fish => 
+                        {this.state.fishData.map(fish => 
                             <span>
                             <input id= {fish.fishType} name="fishType" type = "radio"/>
                             <label for= {fish.fishType}>{fish.fishType}</label>
