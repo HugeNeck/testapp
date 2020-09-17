@@ -1,10 +1,16 @@
-import React from 'react'
+import React, {Component} from 'react'
 import LiveWellData from '../LiveWellPage/LiveWellData'
 
+export default class Fishers extends Component{
 
-function Fishers(){
+    constructor(){
+        super();
+        this.state = {
+            currentFisher : 'Not Picked'
+        }
+    }
 
-
+    render(){
     let fisherArray = []
 
      LiveWellData.map( fish => 
@@ -14,18 +20,16 @@ function Fishers(){
             )  
         )
 
-        function onlyUnique(value, index, self) { 
-            return self.indexOf(value) === index;
-        }
-
         const unique = fisherArray.filter( onlyUnique
             )
-    return(       
+    return(     
         <ul>
          {unique.map(item => <li>{item}</li>)}
         </ul>
     ) 
+    }
 }
 
-
-export default Fishers
+function onlyUnique(value, index, self) { 
+    return self.indexOf(value) === index;
+}

@@ -5,16 +5,23 @@ import Header from './../Global/Header';
 import MainMenu from './MainMenu';
 
 
-function App(){
+export default class App extends React.Component{
+
+  constructor(){
+    super();
+    this.state = {
+        currentFisher : 'Not Picked'
+    }
+}
+
+  render(){
     return (
       <div  className="App">
-        <Header />
+        <Header currentFisher = {this.state.currentFisher}/>
         <MainMenu/>
         <Footer />
       </div>
      
     );
   }
-
-
-export default App;
+}

@@ -43,8 +43,31 @@ const LiveWellData = [
                     fish4: "13",
                     fish5: "11",
                     }
-                ]
+                ]               
+    },
+    {  
+        id:3,
+        fishType:"Drum",
+        catches:[
+                 {
+                    fisher: "Joel",
+                    fish1: "26",
+                    fish2: "25", 
+                    fish3: "24",
+                    fish4: "23",
+                    fish5: "22",
+                    },
+                    {
+                    fisher: "Fez",
+                    fish1: "0",
+                    fish2: "0", 
+                    fish3: "0",
+                    fish4: "0",
+                    fish5: "0",
+                    }
+                ]               
     }
+
 ]
 
 
