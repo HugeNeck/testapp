@@ -11,32 +11,14 @@ export default class Replace extends Component{
     }
     
     render(){
-
-        // const fishRadioData = []
-
-        // for (let i=0; i < LiveWellData.length; i++){
-        //     fishRadioData[i] = LiveWellData[i].fishType;
-        // }
-
-
                 return(
-                    <form id = "inputForm" action= "">
-
-
-                        {/* {fishRadioData.map(fishType => 
-                            <span>
-                            <input id= {fishType} name="fishType" type = "radio"/>
-                            <label for= {fishType}>{fishType}</label>
-                            </span>
-                        )} */}
-
-                        {this.state.fishData.map(fish => 
-                            <span>
-                            <input id= {fish.fishType} name="fishType" type = "radio"/>
-                            <label for= {fish.fishType}>{fish.fishType}</label>
-                            </span>
-                        )}    
-
+                    <form id = "inputForm" action="">
+                        <label for= "fishType">Choose a Fish</label>
+                            <select id= "fishType" name="fishType">
+                                {this.state.fishData.map(fish => 
+                                <option value={fish.fishType}>{fish.fishType}</option>                
+                                )}    
+                          </select>
                     <br></br>
                     <text>Size of Fish in Inches:</text>
                     <input classname= "fishLength" type = "text" 
@@ -44,6 +26,10 @@ export default class Replace extends Component{
                     <br></br>
                     <text>Weight of Fish in Pounds:</text>
                     <input classname= "fishWeight" type = "text" 
+                    />
+                    <br></br>
+                    <text>Take or Upload Picture:</text>
+                    <input classname= "fishPic" type = "image" alt = 'no pic'
                     />
                     <br></br>
                     <input type= "submit" value= "Submit"/>

@@ -18,6 +18,7 @@ export default function LiveWell(){
         <tr>
             <th>Fish Type</th>
             <th>Fisher</th>
+            <th>Pic</th>
             <th>Biggest Fish!</th>
             <th>Second</th>
             <th>Third</th>

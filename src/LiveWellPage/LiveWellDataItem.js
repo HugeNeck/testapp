@@ -6,6 +6,7 @@ function LiveWellDataItem(props){
             <tr>  
             <td>{props.name}</td>
             <td>{item.fisher}</td>
+            <td>image</td>
             <td>{item.fish1}</td>
             <td>{item.fish2}</td>
             <td>{item.fish3}</td>

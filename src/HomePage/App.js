@@ -1,27 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './../Global/App.css';
 import Footer from './../Global/Footer';
 import Header from './../Global/Header';
 import MainMenu from './MainMenu';
 
+export default function App(){
 
-export default class App extends React.Component{
+    const [selectedFisher, setSelectedFisher] = useState('none picked')
 
-  constructor(){
-    super();
-    this.state = {
-        currentFisher : 'Not Picked'
-    }
-}
+    function setFisher(e){
+      setSelectedFisher(e)
+     }
 
-  render(){
     return (
-      <div  className="App">
-        <Header currentFisher = {this.state.currentFisher}/>
-        <MainMenu/>
+      <div  className="App" >
+        <Header currentFisher = {selectedFisher}/>
+        <MainMenu selectedFisher = {selectedFisher} setFisher={setFisher}/>
         <Footer />
       </div>
      
     );
   }
-}

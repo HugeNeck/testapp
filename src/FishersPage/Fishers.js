@@ -1,26 +1,20 @@
-import React, {Component} from 'react'
+import React, {useState} from 'react'
 import LiveWellData from '../LiveWellPage/LiveWellData'
 
-export default class Fishers extends Component{
+export default function Fishers(props){
 
-    constructor(){
-        super();
-        this.state = {
-           currentFisher: "Not Picked"
-        }
-        
-        // this.updateFisher = this.updateFisher.bind(this)
-    }
-
-    updateFisher(item){
-      this.setState( () => {
-          return {
-              currentFisher: item}
-          })
-    }
+           //for when it was class based
+    // updateFisher(item){
+    //     this.setState( () => {
+    //         return {
+    //             currentFisher: item}
+    //         })
+    //   }
+   
     
 
-    render(){
+    // render(){
+        // const fisher = useState(props.setFisher)
 
         let fisherArray = []
 
@@ -39,16 +33,17 @@ export default class Fishers extends Component{
              {unique.map(item =>
                     <span>
                     <input type="radio" id={item} name="fisher" 
-                    onClick={() => this.updateFisher(item)}/>
+                    // onClick={() => this.updateFisher(item)}/>
+                    onClick={() => props.value.setFisher(item)}/>
                     <label for={item}>{item}</label>
                     <br></br>      
                     </span>
                  )}
-            <p>{this.state.currentFisher}</p>
+            {/* <p>{this.state.currentFisher}</p> */}
             </div>
             ) 
     }   
-}
+
 
 function onlyUnique(value, index, self) { 
     return self.indexOf(value) === index;

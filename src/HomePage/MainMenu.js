@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import MenuItem from './MenuItem'
 import fishPic from './fishIcon.jpg'
 import Replace from '../ReplacePage/Replace'
@@ -6,10 +6,11 @@ import LiveWell from '../LiveWellPage/LiveWell'
 import Fishers from '../FishersPage/Fishers'
 import {Link, BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
-function MainMenu(){
+function MainMenu(props){
    
-        return(
+        // const fisher = useState(props.setFisher)
 
+        return(
         <Router>
             <main className = "MainMenu">
             <img src= {fishPic} alt = "fishing pic" height = "100" width = "160"/>
@@ -29,15 +30,18 @@ function MainMenu(){
                        <LiveWell/>
                     </Route>
                     <Route path="/Fishers">
-                       <Fishers />
+                       {/* <Fishers setFisher={props.setFisher}/> */}
+                       <Fishers value={props}/>
                     </Route>
 
                 </Switch>
 
             </main>
         </Router>
-
+       
         )
     }
+
+
 
 export default MainMenu
