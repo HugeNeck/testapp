@@ -13,7 +13,7 @@ export default class Replace extends Component{
     render(){
                 return(
                     <form id = "inputForm" action="">
-                        <label for= "fishType">Choose a Fish</label>
+                        <label id = "inputLabel" for= "fishType">Choose a Fish</label>
                             <select id= "fishType" name="fishType">
                                 {this.state.fishData.map(fish => 
                                 <option value={fish.fishType}>{fish.fishType}</option>                
@@ -32,7 +32,7 @@ export default class Replace extends Component{
                     <input classname= "fishPic" type = "image" alt = 'no pic'
                     />
                     <br></br>
-                    <input type= "submit" value= "Submit"/>
+                    <input className = "submitButton" type= "submit" value= "Submit"/>
                     </form>  
                 )}
     

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import LiveWellData from '../LiveWellPage/LiveWellData'
 
 export default function Fishers(props){
@@ -11,7 +11,11 @@ export default function Fishers(props){
     //         })
     //   }
    
-    
+    const styles = {
+        color: "blue", 
+        fontWeight: "bold"
+    }
+
 
     // render(){
         // const fisher = useState(props.setFisher)
@@ -29,7 +33,8 @@ export default function Fishers(props){
         )
 
         return(     
-            <div>      
+            <div>    
+            <p style={styles}> Select Current Fisher:</p>
              {unique.map(item =>
                     <span>
                     <input type="radio" id={item} name="fisher" 

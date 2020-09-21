@@ -4,17 +4,18 @@ import React from 'react';
 function MenuItem(props){
 
     const styles = {
-        fontsize:30,
-        backgroundColor: "red"
+        backgroundColor: "red", 
+        width: "200px",
+        fontSize: "calc(10px + 1vmin)"
     }
 
 
     return(
 
-        <div className = "MenuItem" >  
-            
-        <input type="button" value={props.value} style={styles}></input>
-     
+        <div className = "MenuItem" >      
+        <input type="button" onClick={props.value === "See All Fish In Well" ? () => props.onClick(true) : " "} 
+        value={props.value} style={styles}></input>
+
         </div>
     )
 }

@@ -1,36 +1,40 @@
 .App {
-  text-align: left;
   background-color: #416e33;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
+input.submitButton{
+  background-color: red;
+}
+
 .Header{
   color: #61dafb;
-  text-align: left;
+  align-self: flex-start; 
   font-size: calc(5px + 1vmin);
 }
 
+
 .MainMenu{
-  display: grid;
-  align-self: center;
   font-size: calc(20px + 2vmin);
+  align-self: flex-start;
 }
 
 .Footer{
   color: #61dafb;
-  text-align: left;
   font-size: calc(5px + 1vmin);
 }
 
+
 td{
   color: blue;
-  text-align: left;
+  align-self: stretch;
+  font-weight: bold;
   font-size: calc(5px + 1vmin);
 }
 
@@ -40,4 +44,13 @@ text{
 
 ul{
   font-size: calc(5px + 1vmin);
+
+}
+
+li{
+  display: inline-flex;
+}
+
+#inputLabel{
+  color: blue;
 }
