@@ -35,6 +35,3 @@ export default function LiveWell(props){
         )
     }
 }
-
-// link to weather information
-// http://api.openweathermap.org/data/2.5/weather?q=ottawa,ca&APPID=7e943c97096a9784391a981c4d878b22&mode=xml&units=metric%22

@@ -19,8 +19,13 @@ input.submitButton{
   font-size: calc(5px + 1vmin);
 }
 
+#menuPic{
+  align-self: flex-start;
+  display:inline-flex
+}
 
-.MainMenu{
+
+main{
   font-size: calc(20px + 2vmin);
   align-self: flex-start;
 }

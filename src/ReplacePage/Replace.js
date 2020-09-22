@@ -1,13 +1,25 @@
 import React, {Component} from 'react'
 import LiveWellData from '../LiveWellPage/LiveWellData'
 
+
 export default class Replace extends Component{
 
     constructor(){
         super();
         this.state = {
-            fishData : LiveWellData
+            weatherData : {
+            }
         }
+    }
+
+    componentDidMount(){
+        fetch("http://api.openweathermap.org/data/2.5/weather?q=ottawa,ca&APPID=7e943c97096a9784391a981c4d878b22&mode=json&units=metric%22")
+        .then(response => response.json())
+        .then(data => {
+            this.setState({
+                weatherData : data.weather[0]
+            })
+        })
     }
     
     render(){
@@ -15,25 +27,28 @@ export default class Replace extends Component{
                     <form id = "inputForm" action="">
                         <label id = "inputLabel" for= "fishType">Choose a Fish</label>
                             <select id= "fishType" name="fishType">
-                                {this.state.fishData.map(fish => 
+                                {LiveWellData.map(fish => 
                                 <option value={fish.fishType}>{fish.fishType}</option>                
                                 )}    
                           </select>
                     <br></br>
-                    <text>Size of Fish in Inches:</text>
-                    <input classname= "fishLength" type = "text" 
+                    <span>Size of Fish in Inches:</span>
+                    <input className= "fishLength" type = "text" 
                     />
                     <br></br>
-                    <text>Weight of Fish in Pounds:</text>
-                    <input classname= "fishWeight" type = "text" 
+                    <span>Weight of Fish in Pounds:</span>
+                    <input className= "fishWeight" type = "text" 
                     />
                     <br></br>
-                    <text>Take or Upload Picture:</text>
-                    <input classname= "fishPic" type = "image" alt = 'no pic'
+                    <span>Take or Upload Picture:</span>
+                    <input className= "fishPic" type = "image" alt = 'no pic'
                     />
                     <br></br>
                     <input className = "submitButton" type= "submit" value= "Submit"/>
+                    <div> 
+                    {this.state.weatherData.description}
+                    </div>
                     </form>  
-                )}
-    
+                )
+    }
 }

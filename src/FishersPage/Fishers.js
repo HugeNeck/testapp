@@ -13,9 +13,12 @@ export default function Fishers(props){
    
     const styles = {
         color: "blue", 
-        fontWeight: "bold"
+        fontWeight: "bold",
     }
 
+    const completedStyle = {
+        fontStyle : "italic" 
+    }
 
     // render(){
         // const fisher = useState(props.setFisher)
@@ -39,8 +42,11 @@ export default function Fishers(props){
                     <span>
                     <input type="radio" id={item} name="fisher" 
                     // onClick={() => this.updateFisher(item)}/>
-                    onClick={() => props.value.setFisher(item)}/>
-                    <label for={item}>{item}</label>
+                    onClick={() => props.value.setFisher(item)}    
+                    />
+                    <label for={item} 
+                    style ={(item === props.value.selectedFisher) ? completedStyle: null}
+                    >{item}</label>
                     <br></br>      
                     </span>
                  )}

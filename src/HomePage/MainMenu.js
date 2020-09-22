@@ -20,8 +20,8 @@ function MainMenu(props){
 
         return(
         <Router>
-            <main className = "MainMenu">
-            <img src= {fishPic} alt = "fishing pic" height = "100" width = "160"/>
+            <img src= {fishPic} alt = "fishing pic" id="menuPic" height = "100" width = "160"/>
+            <main>     
                 <nav> 
                 <ul>
                 <li><Link to="/Replace"><MenuItem value="Replace Biggest Fish"/> </Link></li>
@@ -41,14 +41,12 @@ function MainMenu(props){
                        {/* <Fishers setFisher={props.setFisher}/> */}
                        <Fishers value={props}/>
                     </Route>
-
                 </Switch>
-
             </main>
         </Router>
-       
+      
         )
-    }
+}
 
 
 
