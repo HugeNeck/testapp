@@ -7,9 +7,19 @@ export default class Replace extends Component{
     constructor(){
         super();
         this.state = {
-            weatherData : {
-            }
+            weatherData : {},
+            fishData : LiveWellData,
+            fishLength : 0,
+            fishWeight : 0    
         }
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+
+    handleChange(event){
+        this.setState({
+            [event.target.name] : event.target.value
+        })
     }
 
     componentDidMount(){
@@ -25,19 +35,21 @@ export default class Replace extends Component{
     render(){
                 return(
                     <form id = "inputForm" action="">
-                        <label id = "inputLabel" for= "fishType">Choose a Fish</label>
+                        <label id = "inputLabel" htmlFor= "fishType">Choose a Fish</label>
                             <select id= "fishType" name="fishType">
-                                {LiveWellData.map(fish => 
-                                <option value={fish.fishType}>{fish.fishType}</option>                
+                                {this.state.fishData.map(fish => 
+                                <option key={fish.fishType} value={fish.fishType}>{fish.fishType}</option>                
                                 )}    
                           </select>
                     <br></br>
                     <span>Size of Fish in Inches:</span>
-                    <input className= "fishLength" type = "text" 
+                    <input className= "fishLength" name= "fishLength" type = "text" placeholder={this.state.fishLength}
+                    onChange={this.changeLength}
                     />
                     <br></br>
                     <span>Weight of Fish in Pounds:</span>
-                    <input className= "fishWeight" type = "text" 
+                    <input className= "fishWeight" name= "fishWeight" type = "text" placeholder={this.state.fishWeight}
+                    onChange={this.changeWeight}
                     />
                     <br></br>
                     <span>Take or Upload Picture:</span>
@@ -45,8 +57,10 @@ export default class Replace extends Component{
                     />
                     <br></br>
                     <input className = "submitButton" type= "submit" value= "Submit"/>
-                    <div> 
-                    {this.state.weatherData.description}
+                    
+                    <div className = "weather">
+                    Current Weather:
+                    {this.state.weatherData.description }
                     </div>
                     </form>  
                 )

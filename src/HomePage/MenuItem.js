@@ -13,7 +13,7 @@ function MenuItem(props){
     return(
 
         <div className = "MenuItem" >      
-        <input type="button" onClick={props.value === "See All Fish In Well" ? () => props.onClick(true) : ""} 
+        <input type="button" onClick={props.value === "See All Fish In Well" ? () => props.onClick(true) : null} 
         value={props.value} style={styles}></input>
 
         </div>
