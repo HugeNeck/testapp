@@ -4,6 +4,8 @@ import Footer from './../Global/Footer';
 import Header from './../Global/Header';
 import MainMenu from './MainMenu';
 
+import { LiveWellDataProvider } from '../LiveWellPage/LiveWellData'
+
 export default function App(){
 
     const [selectedFisher, setSelectedFisher] = useState('none picked')
@@ -13,11 +15,12 @@ export default function App(){
      }
 
     return (
+      <LiveWellDataProvider>
       <div  className="App" >
         <Header currentFisher = {selectedFisher}/>
         <MainMenu selectedFisher = {selectedFisher} setFisher={setFisher}/>
         <Footer />
       </div>
-     
+      </LiveWellDataProvider>
     );
   }

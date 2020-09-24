@@ -1,7 +1,10 @@
-import React from 'react'
-import LiveWellData from '../LiveWellPage/LiveWellData'
+import React, {useContext} from 'react'
+
+import {LiveWellDataContext} from '../LiveWellPage/LiveWellData'
 
 export default function Fishers(props){
+
+    const [LiveWellData, setLiveWellData] = useContext(LiveWellDataContext)
 
            //for when it was class based
     // updateFisher(item){
@@ -39,16 +42,17 @@ export default function Fishers(props){
             <div>    
             <p style={styles}> Select Current Fisher:</p>
              {unique.map(item =>
-                    <span>
+                    <div className = "fisherRadio" key={item}>
                     <input type="radio" id={item} name="fisher" 
                     // onClick={() => this.updateFisher(item)}/>
-                    onClick={() => props.value.setFisher(item)}    
+                    onChange={() => props.value.setFisher(item)}  
+                    value = {item} 
                     />
-                    <label for={item} 
+                    <label htmlFor={item}  
                     style ={(item === props.value.selectedFisher) ? completedStyle: null}
                     >{item}</label>
                     <br></br>      
-                    </span>
+                    </div>
                  )}
             {/* <p>{this.state.currentFisher}</p> */}
             </div>

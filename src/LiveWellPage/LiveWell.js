@@ -1,6 +1,7 @@
-import LiveWellData from './LiveWellData'
+
 import LiveWellDataItem from './LiveWellDataItem'
-import React from 'react'
+import React, {useContext} from 'react'
+import {LiveWellDataContext} from './LiveWellData'
 
 export default function LiveWell(props){
 
@@ -8,7 +9,9 @@ export default function LiveWell(props){
     width : "100%"
     }
 
-    const fishArray = LiveWellData.map( fish =>
+    const [liveWellData, setLiveWelldata] = useContext(LiveWellDataContext)
+
+    const fishArray = liveWellData.map( fish =>
         <LiveWellDataItem key = {fish.id} name ={fish.fishType}
         catchesArray = {fish.catches} />)
 

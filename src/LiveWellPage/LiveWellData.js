@@ -1,6 +1,10 @@
-//Data from Database. Right now practicing with Array
+import React, {useState, createContext} from 'react';
 
-const LiveWellData = [
+export const LiveWellDataContext = createContext();
+
+export const LiveWellDataProvider = props => {
+    const [liveWellData, setLiveWellData] = useState(
+[
     {
         id:1,
         fishType: "Walleye",
@@ -65,10 +69,13 @@ const LiveWellData = [
                     fish4: "0",
                     fish5: "0",
                     }
-                ]               
+                ]             
     }
+]);
+return(
+        <LiveWellDataContext.Provider value = {[liveWellData, setLiveWellData]}>
+            {props.children}
+        </LiveWellDataContext.Provider>
+)
+}
 
-]
-
-
-export default LiveWellData
