@@ -4,7 +4,7 @@ import {LiveWellDataContext} from '../LiveWellPage/LiveWellData'
 
 export default function Fishers(props){
 
-    const [LiveWellData, setLiveWellData] = useContext(LiveWellDataContext)
+    const [liveWellData, setLiveWellData] = useContext(LiveWellDataContext)
 
            //for when it was class based
     // updateFisher(item){
@@ -28,7 +28,7 @@ export default function Fishers(props){
 
         let fisherArray = []
 
-        LiveWellData.map( fish => 
+        liveWellData.map( fish => 
             fish.catches.map(       
                     catches => 
                     fisherArray.push(catches.fisher)
